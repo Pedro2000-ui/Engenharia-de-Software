@@ -100,7 +100,7 @@ O produto oferecerá as seguintes funcionalidades principais:
    - Design responsivo para dispositivos móveis e desktops.
    - Conformidade com diretrizes de acessibilidade (WCAG).
 
-**Referências**:
+# Referências:
 
 1. Problemas de gestão médica que um software pode resolver. Disponível em: [https://www.doctormax.com.br/problemas-na-gestao-medica/](https://www.doctormax.com.br/problemas-na-gestao-medica/)
 2. CLÍNICAS. Clínicas privadas perdem até R$ 144 mil por problemas com agendamento de consultas. Disponível em [https://medicinasa.com.br/agendamento-consultas/](https://medicinasa.com.br/agendamento-consultas/)
