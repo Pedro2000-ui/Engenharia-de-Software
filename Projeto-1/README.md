@@ -98,20 +98,19 @@ O produto oferecerá as seguintes funcionalidades principais:
 
 7. **Acessibilidade**:
    - Design responsivo para dispositivos móveis e desktops.
-   - Conformidade com diretrizes de acessibilidade (WCAG).
+   - Conformidade com diretrizes de acessibilidade.
 
 # Referências:
 
 1. Problemas de gestão médica que um software pode resolver. Disponível em: [https://www.doctormax.com.br/problemas-na-gestao-medica/](https://www.doctormax.com.br/problemas-na-gestao-medica/)
 2. CLÍNICAS. Clínicas privadas perdem até R$ 144 mil por problemas com agendamento de consultas. Disponível em [https://medicinasa.com.br/agendamento-consultas/](https://medicinasa.com.br/agendamento-consultas/)
 3. O Uso de Software Médico é Decisivo para o Futuro das Clínicas Médicas. Disponível em [https://emed.com.br/o-uso-de-software-medico-e-decisivo-para-o-futuro-das-clinicas-medicas/](https://emed.com.br/o-uso-de-software-medico-e-decisivo-para-o-futuro-das-clinicas-medicas/)
-2. Lei Geral de Proteção de Dados (LGPD). Disponível em: [https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm).
-7. Web Serviços Amazon (AWS). (2021). **Cloud Computing for Healthcare**. Disponível em: [https://aws.amazon.com/pt/health/](https://aws.amazon.com/pt/health/).
-8. Web Content Accessibility Guidelines (WCAG). Disponível em: [https://www.w3.org/WAI/standards-guidelines/wcag/](https://www.w3.org/WAI/standards-guidelines/wcag/).
-9. Health Level Seven International (HL7). (2021). **FHIR: Fast Healthcare Interoperability Resources**. Disponível em: [https://www.hl7.org/fhir/](https://www.hl7.org/fhir/).
-10. Documentação API Google Calendar. Disponível em: [https://developers.google.com/calendar](https://developers.google.com/calendar).
-11. Documentação API Safrapay. Disponível em: [https://developers.safrapay.com.br](https://developers.safrapay.com.br)
-12. Documentação API Asaas. Disponível em: [https://docs.asaas.com/docs/visao-geral](https://docs.asaas.com/docs/visao-geral)
-13. O que é um **Wearable**?. Disponível em: [https://www.iberdrola.com/inovacao/tecnologia-wearable](https://www.iberdrola.com/inovacao/tecnologia-wearable)
-14. Documentação API Blip. Disponível em [https://docs.blip.ai/#introduction](https://docs.blip.ai/#introduction)
+4. Lei Geral de Proteção de Dados (LGPD). Disponível em: [https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm](https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm).
+5. Web Serviços Amazon (AWS). Disponível em: [https://aws.amazon.com/pt/health/](https://aws.amazon.com/pt/health/).
+6. Documentação API Google Calendar. Disponível em: [https://developers.google.com/calendar](https://developers.google.com/calendar).
+7. Documentação API Safrapay. Disponível em: [https://developers.safrapay.com.br](https://developers.safrapay.com.br)
+8. Documentação API Asaas. Disponível em: [https://docs.asaas.com/docs/visao-geral](https://docs.asaas.com/docs/visao-geral)
+9. O que é um **Wearable**?. Disponível em: [https://www.iberdrola.com/inovacao/tecnologia-wearable](https://www.iberdrola.com/inovacao/tecnologia-wearable)
+10. Documentação API Blip. Disponível em: [https://docs.blip.ai/#introduction](https://docs.blip.ai/#introduction)
+11. WCAG - As diretrizes de acessibilidade para o conteúdo da web de forma descomplicada. Disponível em: [https://mwpt.com.br/wcag-as-diretrizes-de-acessibilidade-para-o-conteudo-da-web-de-forma-descomplicada/](https://mwpt.com.br/wcag-as-diretrizes-de-acessibilidade-para-o-conteudo-da-web-de-forma-descomplicada/)
 ---
