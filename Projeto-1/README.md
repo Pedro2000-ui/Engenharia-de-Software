@@ -204,6 +204,53 @@ Os usuários do sistema de agendamento de consultas médicas são divididos em t
 
 ---
 
+## 4. Restrições do Projeto e do Produto
+
+### 4.1 Tecnologia e Padrões
+O desenvolvimento do sistema de agendamento de consultas médicas está sujeito a algumas restrições tecnológicas e de padrões:
+
+1. **Tecnologias Utilizadas**:
+   - O sistema deve ser desenvolvido usando tecnologias modernas, como HTML5, CSS3, JavaScript (React para o front-end e Node.js para o back-end).
+   - O banco de dados deve ser seguro e escalável, como PostgreSQL ou MongoDB.
+
+2. **Padrões de Desenvolvimento**:
+   - O código deve seguir boas práticas de programação, como clean code e versionamento com Git.
+   - O sistema deve ser responsivo, funcionando bem em dispositivos móveis e desktops.
+
+3. **Integrações**:
+   - O sistema precisa se integrar com APIs de terceiros, como gateways de pagamento (ex.: PayPal, Stripe) e serviços de autenticação (ex.: Google, Facebook).
+   - Deve ser compatível com sistemas de planos de saúde e laboratórios.
+
+4. **Segurança**:
+   - O sistema deve usar criptografia para proteger dados sensíveis, como informações médicas e pessoais.
+   - Deve seguir padrões de segurança, como HTTPS e proteção contra ataques cibernéticos.
+
+---
+
+### 4.2 Legislação e Regulamentações
+O sistema deve estar em conformidade com as seguintes leis e regulamentações:
+
+1. **Lei Geral de Proteção de Dados (LGPD)**:
+   - O sistema deve garantir a privacidade e segurança dos dados dos usuários, seguindo as diretrizes da LGPD.
+   - Os usuários devem consentir com o uso de seus dados, e o sistema deve permitir que eles solicitem a exclusão de suas informações.
+
+2. **Regulamentações Médicas**:
+   - O sistema deve seguir as normas do Conselho Federal de Medicina (CFM) para prontuários eletrônicos e armazenamento de dados médicos.
+   - Deve garantir a confidencialidade das informações de saúde dos pacientes.
+
+3. **Acessibilidade**:
+   - O sistema deve ser acessível a todos os usuários, incluindo pessoas com deficiência, seguindo as diretrizes do WCAG (Web Content Accessibility Guidelines).
+
+---
+
+### Resumo das Restrições
+
+| **Categoria**               | **Restrições**                                                                 |
+|------------------------------|--------------------------------------------------------------------------------|
+| **Tecnologia e Padrões**     | Uso de tecnologias modernas, integrações com APIs, segurança e responsividade. |
+| **Legislação e Regulamentações** | Conformidade com LGPD, normas do CFM e acessibilidade |
+
+---
 
 **Referências**:
 
@@ -220,4 +267,5 @@ Os usuários do sistema de agendamento de consultas médicas são divididos em t
 11. WCAG - As diretrizes de acessibilidade para o conteúdo da web de forma descomplicada. Disponível em: [https://mwpt.com.br/wcag-as-diretrizes-de-acessibilidade-para-o-conteudo-da-web-de-forma-descomplicada/](https://mwpt.com.br/wcag-as-diretrizes-de-acessibilidade-para-o-conteudo-da-web-de-forma-descomplicada/)
 12. Partes interessadas primárias e secundárias em um projeto de software. Disponível em: [https://www.exposit.com/blog/primary-secondary-stakeholders-software-project/](https://www.exposit.com/blog/primary-secondary-stakeholders-software-project/)
 13. Stakeholders: o que são, quais os tipos e como gerenciá-los? [https://rockcontent.com/br/blog/stakeholder/](https://rockcontent.com/br/blog/stakeholder/)
+14. Normas CFM. Disponível em: [https://portal.cfm.org.br/](https://portal.cfm.org.br/)
 ---
