@@ -100,6 +100,111 @@ O produto oferecerá as seguintes funcionalidades principais:
    - Design responsivo para dispositivos móveis e desktops.
    - Conformidade com diretrizes de acessibilidade (WCAG).
 
+## 2. Descrição dos Stakeholders
+
+Os stakeholders são todas as pessoas, grupos ou organizações que têm interesse no projeto ou que podem ser afetados por ele. No contexto do sistema de agendamento de consultas médicas, os principais stakeholders são:
+
+### Stakeholders Principais
+
+| **Stakeholder**       | **Descrição**                                                                 |
+|------------------------|-------------------------------------------------------------------------------|
+| **Pacientes**          | Pessoas que utilizam o sistema para agendar consultas e acessar serviços médicos. |
+| **Médicos**            | Profissionais de saúde que utilizam a plataforma para gerenciar agendas e prontuários. |
+| **Clínicas/Hospitais** | Instituições de saúde que adotam o sistema para melhorar a eficiência operacional. |
+| **Desenvolvedores**    | Equipe responsável pela criação, manutenção e atualização do sistema.          |
+| **Governo**            | Órgãos reguladores que definem normas e leis para sistemas de saúde digitais.  |
+
+---
+
+### Detalhamento dos Stakeholders
+
+| **Stakeholder**       | **Tipo**          | **Interesse**                                                                 | **Poder/Influência** | **Requisitos/Expectativas**                          | **Estratégia de Engajamento**                          |
+|------------------------|-------------------|-------------------------------------------------------------------------------|-----------------------|-------------------------------------------------------|--------------------------------------------------------|
+| **Pacientes**          | Usuário final     | Facilidade no agendamento, acesso a histórico médico e lembretes de consultas. | Médio                 | Sistema intuitivo, rápido e seguro.                  | Pesquisas de satisfação e feedback contínuo.           |
+| **Médicos**            | Usuário final     | Gestão eficiente de agendas e acesso a prontuários eletrônicos.               | Alto                  | Ferramentas de gestão de tempo e integração com outros sistemas. | Treinamentos e suporte técnico personalizado.          |
+| **Clínicas/Hospitais** | Organização       | Melhoria na eficiência operacional e redução de custos.                       | Alto                  | Relatórios de desempenho e integração com sistemas existentes. | Reuniões periódicas para alinhamento de expectativas.  |
+| **Desenvolvedores**    | Equipe técnica    | Desenvolver um sistema funcional, seguro e escalável.                         | Médio                 | Requisitos claros e feedback constante dos usuários.  | Reuniões de sprint e revisões de requisitos.           |
+| **Governo**            | Regulador         | Garantir que o sistema cumpra normas de privacidade e segurança de dados.     | Alto                  | Conformidade com leis como a LGPD.                    | Consultas a especialistas e auditorias periódicas.     |
+
+---
+
+### Explicação dos Stakeholders
+
+1. **Pacientes**:
+   - São os principais usuários do sistema. Eles precisam de uma plataforma fácil de usar, que permita agendar consultas rapidamente e acessar informações médicas de forma segura.
+   - Suas expectativas incluem notificações automáticas, histórico médico centralizado e uma experiência sem complicações.
+
+2. **Médicos**:
+   - Utilizam o sistema para gerenciar suas agendas e acessar prontuários dos pacientes.
+   - Precisam de ferramentas que otimizem seu tempo, como integração com calendários e alertas de consultas.
+
+3. **Clínicas/Hospitais**:
+   - Buscam melhorar a eficiência operacional e reduzir custos com processos manuais.
+   - Esperam relatórios detalhados sobre o desempenho do sistema e dos profissionais.
+
+4. **Desenvolvedores**:
+   - Responsáveis por criar e manter o sistema. Precisam de requisitos claros e feedback constante para garantir que o produto atenda às necessidades dos usuários.
+
+5. **Governo**:
+   - Define as normas e leis que o sistema deve seguir, como a Lei Geral de Proteção de Dados (LGPD).
+   - Sua influência é alta, pois o sistema precisa estar em conformidade com as regulamentações.
+
+---
+
+### Exemplo de Stakeholder Específico
+
+| **Stakeholder**       | **Descrição**                                                                 |
+|------------------------|-------------------------------------------------------------------------------|
+| **ID Stakeholder**     | 31-001                                                                       |
+| **Tipo**               | Diretor de Clínica                                                           |
+| **Interesse**          | Redução de custos operacionais e melhoria na experiência do paciente.        |
+| **Poder/Influência**   | Alto                                                                         |
+| **Requisitos/Expectativas** | Sistema econômico, rápido e com relatórios de desempenho detalhados.       |
+| **Estratégia de Engajamento** | Reuniões mensais para apresentação de resultados e ajustes no sistema.   |
+
+---
+
+## 3. Descrição dos Usuários
+
+Os usuários do sistema de agendamento de consultas médicas são divididos em três grupos principais:
+
+### 1. **Pacientes**
+- **Quem são**: Pessoas que buscam agendar consultas e acessar serviços médicos.
+- **Necessidades**:
+  - Agendar consultas de forma rápida e fácil.
+  - Receber lembretes sobre consultas marcadas.
+  - Acessar histórico médico, como resultados de exames e prescrições.
+- **Expectativas**: Uma plataforma simples, segura e que economize tempo.
+
+### 2. **Médicos**
+- **Quem são**: Profissionais de saúde que utilizam o sistema para gerenciar suas agendas e prontuários.
+- **Necessidades**:
+  - Visualizar e gerenciar horários de consultas.
+  - Acessar prontuários eletrônicos dos pacientes.
+  - Receber alertas sobre cancelamentos ou reagendamentos.
+- **Expectativas**: Ferramentas que ajudem a otimizar o tempo e a melhorar o atendimento.
+
+### 3. **Recepcionistas/Administradores de Clínicas**
+- **Quem são**: Funcionários responsáveis por administrar agendas, confirmar consultas e gerenciar recursos das clínicas.
+- **Necessidades**:
+  - Gerenciar agendas de múltiplos médicos.
+  - Confirmar consultas e enviar lembretes aos pacientes.
+  - Gerar relatórios sobre o desempenho das clínicas.
+- **Expectativas**: Um sistema que facilite a organização e reduza o trabalho manual.
+
+---
+
+### Resumo dos Usuários
+
+| **Grupo de Usuários**       | **Principais Necessidades**                                                                 |
+|------------------------------|--------------------------------------------------------------------------------------------|
+| **Pacientes**                | Agendamento rápido, lembretes automáticos e acesso ao histórico médico.                    |
+| **Médicos**                  | Gestão de agendas, acesso a prontuários e alertas de consultas.                            |
+| **Recepcionistas/Administradores** | Gerenciamento de agendas, confirmação de consultas e geração de relatórios.           |
+
+---
+
+
 **Referências**:
 
 1. Problemas de gestão médica que um software pode resolver. Disponível em: [https://www.doctormax.com.br/problemas-na-gestao-medica/](https://www.doctormax.com.br/problemas-na-gestao-medica/)
