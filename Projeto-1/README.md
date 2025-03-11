@@ -252,6 +252,65 @@ O sistema deve estar em conformidade com as seguintes leis e regulamentações:
 
 ---
 
+## 5. Análise de Riscos e Mitigação
+
+Abaixo estão os principais riscos identificados para o projeto do sistema de agendamento de consultas médicas, juntamente com estratégias para mitigá-los:
+
+---
+
+### Tabela de Riscos e Mitigação
+
+| **Risco**                     | **Impacto**       | **Probabilidade** | **Estratégia de Mitigação**                                                                 |
+|--------------------------------|-------------------|-------------------|--------------------------------------------------------------------------------------------|
+| **Vazamento de dados**         | Alto              | Média             | Implementar criptografia de dados, usar protocolos seguros (HTTPS) e realizar auditorias regulares de segurança. |
+| **Falha na integração com APIs** | Médio            | Alta              | Realizar testes extensivos nas integrações e ter planos de contingência para APIs alternativas. |
+| **Baixa adoção por médicos e clínicas** | Alto      | Média             | Oferecer treinamentos, suporte técnico e demonstrar os benefícios do sistema para os usuários. |
+| **Atrasos no desenvolvimento** | Médio             | Alta              | Usar metodologias ágeis (como Scrum) para gerenciar prazos e priorizar funcionalidades essenciais. |
+| **Ataques cibernéticos**       | Alto              | Baixa             | Implementar firewalls, sistemas de detecção de intrusões e manter o software sempre atualizado. |
+| **Não conformidade com leis**  | Alto              | Média             | Consultar especialistas em LGPD e outras regulamentações desde o início do projeto.         |
+
+---
+
+### Explicação dos Riscos
+
+1. **Vazamento de dados**:
+   - **Impacto**: Perda de confiança dos usuários e possíveis multas por violação de privacidade.
+   - **Mitigação**: Usar criptografia e protocolos seguros, além de realizar auditorias frequentes.
+
+2. **Falha na integração com APIs**:
+   - **Impacto**: Funcionalidades essenciais, como pagamentos ou autenticação, podem parar de funcionar.
+   - **Mitigação**: Testar todas as integrações e ter APIs de backup.
+
+3. **Baixa adoção por médicos e clínicas**:
+   - **Impacto**: O sistema pode não atingir o público-alvo, resultando em prejuízos financeiros.
+   - **Mitigação**: Oferecer treinamentos e suporte para facilitar a transição para o sistema.
+
+4. **Atrasos no desenvolvimento**:
+   - **Impacto**: O projeto pode ultrapassar o prazo e o orçamento.
+   - **Mitigação**: Usar metodologias ágeis para gerenciar o tempo e priorizar tarefas.
+
+5. **Ataques cibernéticos**:
+   - **Impacto**: Roubo de dados ou interrupção do serviço.
+   - **Mitigação**: Implementar medidas de segurança robustas e manter o sistema atualizado.
+
+6. **Não conformidade com leis**:
+   - **Impacto**: Multas e problemas legais.
+   - **Mitigação**: Consultar especialistas em regulamentações desde o início do projeto.
+
+---
+
+### Resumo dos Riscos
+
+| **Categoria de Risco**         | **Estratégia de Mitigação**                                                                 |
+|--------------------------------|--------------------------------------------------------------------------------------------|
+| **Vazamento de dados**         | Criptografia, protocolos seguros e auditorias regulares.                                   |
+| **Falha na integração com APIs** | Testes extensivos e planos de contingência.                                               |
+| **Baixa adoção**               | Treinamentos, suporte técnico e demonstração de benefícios.                                |
+| **Atrasos no desenvolvimento** | Uso de metodologias ágeis e priorização de tarefas.                                       |
+| **Ataques cibernéticos**       | Firewalls, detecção de intrusões e atualizações constantes.                               |
+| **Não conformidade com leis**  | Consultoria com especialistas em regulamentações desde o início.                           |
+
+---
 **Referências**:
 
 1. Problemas de gestão médica que um software pode resolver. Disponível em: [https://www.doctormax.com.br/problemas-na-gestao-medica/](https://www.doctormax.com.br/problemas-na-gestao-medica/)
@@ -268,4 +327,6 @@ O sistema deve estar em conformidade com as seguintes leis e regulamentações:
 12. Partes interessadas primárias e secundárias em um projeto de software. Disponível em: [https://www.exposit.com/blog/primary-secondary-stakeholders-software-project/](https://www.exposit.com/blog/primary-secondary-stakeholders-software-project/)
 13. Stakeholders: o que são, quais os tipos e como gerenciá-los? [https://rockcontent.com/br/blog/stakeholder/](https://rockcontent.com/br/blog/stakeholder/)
 14. Normas CFM. Disponível em: [https://portal.cfm.org.br/](https://portal.cfm.org.br/)
+15. Metodologia SCRUM. Disponível em: [https://pt.semrush.com/blog/scrum/](https://pt.semrush.com/blog/scrum/)
+16. Mitigação de riscos. Disponível em: [https://www.atlassian.com/work-management/project-management/risk-mitigation](https://www.atlassian.com/work-management/project-management/risk-mitigation)
 ---
