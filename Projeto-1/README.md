@@ -218,4 +218,6 @@ Os usuários do sistema de agendamento de consultas médicas são divididos em t
 9. O que é um **Wearable**?. Disponível em: [https://www.iberdrola.com/inovacao/tecnologia-wearable](https://www.iberdrola.com/inovacao/tecnologia-wearable)
 10. Documentação API Blip. Disponível em: [https://docs.blip.ai/#introduction](https://docs.blip.ai/#introduction)
 11. WCAG - As diretrizes de acessibilidade para o conteúdo da web de forma descomplicada. Disponível em: [https://mwpt.com.br/wcag-as-diretrizes-de-acessibilidade-para-o-conteudo-da-web-de-forma-descomplicada/](https://mwpt.com.br/wcag-as-diretrizes-de-acessibilidade-para-o-conteudo-da-web-de-forma-descomplicada/)
+12. Partes interessadas primárias e secundárias em um projeto de software. Disponível em: [https://www.exposit.com/blog/primary-secondary-stakeholders-software-project/](https://www.exposit.com/blog/primary-secondary-stakeholders-software-project/)
+13. Stakeholders: o que são, quais os tipos e como gerenciá-los? [https://rockcontent.com/br/blog/stakeholder/](https://rockcontent.com/br/blog/stakeholder/)
 ---
