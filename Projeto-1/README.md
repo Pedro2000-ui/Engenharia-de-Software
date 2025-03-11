@@ -100,7 +100,6 @@ O produto oferecerá as seguintes funcionalidades principais:
    - Design responsivo para dispositivos móveis e desktops.
    - Conformidade com diretrizes de acessibilidade.
 
-<<<<<<< HEAD
 ## 2. Descrição dos Stakeholders
 
 Os stakeholders são todas as pessoas, grupos ou organizações que têm interesse no projeto ou que podem ser afetados por ele. No contexto do sistema de agendamento de consultas médicas, os principais stakeholders são:
@@ -207,9 +206,6 @@ Os usuários do sistema de agendamento de consultas médicas são divididos em t
 
 
 **Referências**:
-=======
-# Referências:
->>>>>>> 3f659133392ebbc10ac15444c9f76fda812b797c
 
 1. Problemas de gestão médica que um software pode resolver. Disponível em: [https://www.doctormax.com.br/problemas-na-gestao-medica/](https://www.doctormax.com.br/problemas-na-gestao-medica/)
 2. CLÍNICAS. Clínicas privadas perdem até R$ 144 mil por problemas com agendamento de consultas. Disponível em [https://medicinasa.com.br/agendamento-consultas/](https://medicinasa.com.br/agendamento-consultas/)
