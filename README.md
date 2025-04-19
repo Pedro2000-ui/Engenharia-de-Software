@@ -35,6 +35,7 @@ Desempenha um papel crucial no mundo moderno por várias razões:
 Aqui estão os projetos documentados neste repositório:
 
 1. [Projeto 1](/Projeto-1/README.md) - Análise para o desenvolvimento de um sistema voltado para consultas médicas.
+2. [Projeto 2](/Projeto-2/README.md) - Requisitos funcionais e não funcionais de um sistema voltado para consultas médicas.
 
 ---
 
