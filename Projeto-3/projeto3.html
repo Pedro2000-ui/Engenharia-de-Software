@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Agendamento Médico</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #727375 0%, #868181 100%);
+            min-height: 100vh;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            color: white;
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .tabs {
+            display: flex;
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 5px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .tab {
+            flex: 1;
+            padding: 15px 20px;
+            text-align: center;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            color: white;
+            font-weight: 500;
+        }
+
+        .tab.active {
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .tab:hover:not(.active) {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .content {
+            display: none;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .wireframes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .wireframe {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .wireframe:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.18);
+        }
+
+        .wireframe h3 {
+            color: #003694;
+            margin-bottom: 20px;
+            font-size: 1.3rem;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .login-form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+            color: #4a5568;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .btn {
+            background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-small {
+            padding: 8px 15px;
+            font-size: 12px;
+            width: auto;
+            margin-left: 10px;
+        }
+
+        .scheduling-section {
+            margin-bottom: 20px;
+        }
+
+        .doctor-list {
+            background: #f8fafc;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+        }
+
+        .doctor-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            margin-bottom: 10px;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .confirmation-card {
+            background: #e6fffa;
+            border: 2px solid #38b2ac;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .diagram-container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+            margin-bottom: 30px;
+        }
+
+        .diagram-title {
+            color: #4a5568;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 15px;
+        }
+
+        .class-diagram {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .class-box {
+            border: 2px solid #4a5568;
+            border-radius: 10px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .class-box:hover {
+            transform: scale(1.02);
+        }
+
+        .class-header {
+            background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .class-attributes, .class-methods {
+            padding: 15px;
+        }
+
+        .class-attributes h4, .class-methods h4 {
+            color: #4a5568;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .class-attributes ul, .class-methods ul {
+            list-style: none;
+            font-size: 0.85rem;
+            line-height: 1.6;
+        }
+
+        .class-attributes li::before {
+            content: "• ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        .class-methods li::before {
+            content: "→ ";
+            color: #764ba2;
+            font-weight: bold;
+        }
+
+        .sequence-diagram {
+            margin-bottom: 40px;
+        }
+
+        .sequence-title {
+            text-align: center;
+            color: #4a5568;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+
+        .sequence-actors {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 30px;
+        }
+
+        .actor {
+            background: linear-gradient(135deg, #ea6666 0%, #a24b4b 100%);
+            color: white;
+            padding: 15px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .sequence-steps {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            padding: 12px;
+            background: #f8fafc;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+        }
+
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #667eea;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .relationships {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f8fafc;
+            border-radius: 10px;
+        }
+
+        .relationships h4 {
+            color: #4a5568;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .relationship-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+
+        .arrow {
+            margin: 0 15px;
+            color: #667eea;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🏥 Sistema de Agendamento Médico</h1>
+            <p>Wireframes e Diagramas Interativos</p>
+        </div>
+
+        <div class="tabs">
+            <div class="tab active" onclick="showTab('wireframes')">📱 Wireframes</div>
+            <div class="tab" onclick="showTab('class-diagram')">🏗️ Diagrama de Classes</div>
+            <div class="tab" onclick="showTab('sequence-diagrams')">🔄 Diagramas de Sequência</div>
+        </div>
+
+        <div id="wireframes" class="content active">
+            <div class="wireframes-grid">
+                <!-- Login -->
+                <div class="wireframe">
+                    <h3>🔐 Tela de Login</h3>
+                    <div class="logo">🏥 MedSystem</div>
+                    <div class="login-form">
+                        <div class="form-group">
+                            <label>Usuário:</label>
+                            <input type="text" placeholder="Digite seu usuário">
+                        </div>
+                        <div class="form-group">
+                            <label>Senha:</label>
+                            <input type="password" placeholder="Digite sua senha">
+                        </div>
+                        <button class="btn">Login</button>
+                    </div>
+                </div>
+
+                <!-- Agendamento -->
+                <div class="wireframe">
+                    <h3>📅 Agendamento de Consulta</h3>
+                    <div class="scheduling-section">
+                        <div class="form-group">
+                            <label>Especialidade:</label>
+                            <div style="display: flex; align-items: center;">
+                                <select style="flex: 1; padding: 10px; border: 2px solid #e2e8f0; border-radius: 8px;">
+                                    <option>Cardiologia</option>
+                                    <option>Dermatologia</option>
+                                    <option>Pediatria</option>
+                                </select>
+                                <button class="btn btn-small">Buscar</button>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 15px;">
+                            <div class="form-group" style="flex: 1;">
+                                <label>Data:</label>
+                                <input type="date">
+                            </div>
+                            <div class="form-group" style="flex: 1;">
+                                <label>Horário:</label>
+                                <input type="time">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="doctor-list">
+                        <h4 style="margin-bottom: 15px; color: #4a5568;">Médicos Disponíveis:</h4>
+                        <div class="doctor-item">
+                            <div>
+                                <strong>Dr. Silva</strong><br>
+                                <small>09:00, 10:00, 14:00</small>
+                            </div>
+                            <button class="btn btn-small">Agendar</button>
+                        </div>
+                        <div class="doctor-item">
+                            <div>
+                                <strong>Dra. Santos</strong><br>
+                                <small>11:00, 15:00, 16:00</small>
+                            </div>
+                            <button class="btn btn-small">Agendar</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Confirmação -->
+                <div class="wireframe">
+                    <h3>✅ Confirmação de Consulta</h3>
+                    <div class="confirmation-card">
+                        <h4 style="color: #2d3748; margin-bottom: 20px;">Confirmação de Consulta</h4>
+                        <div style="margin-bottom: 15px;">
+                            <strong>Médico:</strong> Dr. Silva<br>
+                            <strong>Especialidade:</strong> Cardiologia<br>
+                            <strong>Data:</strong> 01/06/2025<br>
+                            <strong>Horário:</strong> 10:00
+                        </div>
+                        <div style="display: flex; gap: 10px; justify-content: center;">
+                            <button class="btn" style="background: #38a169;">Confirmar</button>
+                            <button class="btn" style="background: #e53e3e;">Cancelar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="class-diagram" class="content">
+            <div class="diagram-container">
+                <h2 class="diagram-title">🏗️ Diagrama de Classes</h2>
+                <div class="class-diagram">
+                    <div class="class-box">
+                        <div class="class-header">Paciente</div>
+                        <div class="class-attributes">
+                            <h4>Atributos</h4>
+                            <ul>
+                                <li>id: Integer</li>
+                                <li>nome: String</li>
+                                <li>email: String</li>
+                                <li>senha: String</li>
+                                <li>telefone: String</li>
+                                <li>data_nasc: Date</li>
+                            </ul>
+                        </div>
+                        <div class="class-methods">
+                            <h4>Métodos</h4>
+                            <ul>
+                                <li>agendarConsulta()</li>
+                                <li>cancelarConsulta()</li>
+                                <li>reagendarConsulta()</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="class-box">
+                        <div class="class-header">Médico</div>
+                        <div class="class-attributes">
+                            <h4>Atributos</h4>
+                            <ul>
+                                <li>id: Integer</li>
+                                <li>nome: String</li>
+                                <li>especialidade: String</li>
+                                <li>CRM: String</li>
+                                <li>telefone: String</li>
+                            </ul>
+                        </div>
+                        <div class="class-methods">
+                            <h4>Métodos</h4>
+                            <ul>
+                                <li>visualizarProntuario()</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="class-box">
+                        <div class="class-header">Consulta</div>
+                        <div class="class-attributes">
+                            <h4>Atributos</h4>
+                            <ul>
+                                <li>id: Integer</li>
+                                <li>data: Date</li>
+                                <li>hora: Time</li>
+                                <li>status: String</li>
+                            </ul>
+                        </div>
+                        <div class="class-methods">
+                            <h4>Métodos</h4>
+                            <ul>
+                                <li>confirmar()</li>
+                                <li>cancelar()</li>
+                                <li>reagendar()</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="class-box">
+                        <div class="class-header">Prontuário</div>
+                        <div class="class-attributes">
+                            <h4>Atributos</h4>
+                            <ul>
+                                <li>id: Integer</li>
+                                <li>diagnosticos: String</li>
+                                <li>prescricoes: String</li>
+                                <li>exames: String</li>
+                            </ul>
+                        </div>
+                        <div class="class-methods">
+                            <h4>Métodos</h4>
+                            <ul>
+                                <li>adicionarRegistro()</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relationships">
+                    <h4>🔗 Relacionamentos</h4>
+                    <div class="relationship-item">
+                        <span>Paciente</span>
+                        <span class="arrow">1 ——— *</span>
+                        <span>Consulta</span>
+                    </div>
+                    <div class="relationship-item">
+                        <span>Médico</span>
+                        <span class="arrow">1 ——— *</span>
+                        <span>Consulta</span>
+                    </div>
+                    <div class="relationship-item">
+                        <span>Consulta</span>
+                        <span class="arrow">1 ——— 1</span>
+                        <span>Prontuário</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="sequence-diagrams" class="content">
+            <div class="diagram-container">
+                <h2 class="diagram-title">🔄 Diagramas de Sequência</h2>
+                
+                <div class="sequence-diagram">
+                    <div class="sequence-title">📅 Agendamento de Consulta</div>
+                    <div class="sequence-actors">
+                        <div class="actor">👤 Paciente</div>
+                        <div class="actor">💻 Frontend</div>
+                        <div class="actor">⚙️ Backend</div>
+                        <div class="actor">🗄️ BD</div>
+                    </div>
+                    <div class="sequence-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div>Paciente solicita tela de agendamento</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div>Frontend requisita especialidades (GET /especialidades)</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div>Backend retorna lista de especialidades</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div>Paciente seleciona especialidade, data e hora</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div>Frontend envia dados (POST /consultas)</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">6</div>
+                            <div>Backend grava consulta no banco de dados</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">7</div>
+                            <div>Sistema exibe confirmação para o paciente</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sequence-diagram">
+                    <div class="sequence-title">❌ Cancelamento de Consulta</div>
+                    <div class="sequence-actors">
+                        <div class="actor">👤 Paciente</div>
+                        <div class="actor">💻 Frontend</div>
+                        <div class="actor">⚙️ Backend</div>
+                    </div>
+                    <div class="sequence-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div>Paciente acessa histórico de consultas</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div>Frontend busca consultas (GET /consultas?paciente_id)</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div>Backend retorna lista de consultas</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div>Paciente solicita cancelamento</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">5</div>
+                            <div>Frontend envia requisição (DELETE /consultas/{id})</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">6</div>
+                            <div>Sistema confirma cancelamento</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sequence-diagram">
+                    <div class="sequence-title">📋 Visualização de Prontuário</div>
+                    <div class="sequence-actors">
+                        <div class="actor">👨‍⚕️ Médico</div>
+                        <div class="actor">💻 Frontend</div>
+                        <div class="actor">⚙️ Backend</div>
+                    </div>
+                    <div class="sequence-steps">
+                        <div class="step">
+                            <div class="step-number">1</div>
+                            <div>Médico solicita prontuário do paciente</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">2</div>
+                            <div>Frontend requisita dados (GET /prontuarios/{paciente_id})</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">3</div>
+                            <div>Backend retorna dados do prontuário</div>
+                        </div>
+                        <div class="step">
+                            <div class="step-number">4</div>
+                            <div>Sistema exibe prontuário para o médico</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showTab(tabName) {
+            // Hide all content
+            const contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.classList.remove('active'));
+            
+            // Remove active class from all tabs
+            const tabs = document.querySelectorAll('.tab');
+            tabs.forEach(tab => tab.classList.remove('active'));
+            
+            // Show selected content
+            document.getElementById(tabName).classList.add('active');
+            
+            // Add active class to clicked tab
+            event.target.classList.add('active');
+        }
+
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add hover effects to wireframes
+            const wireframes = document.querySelectorAll('.wireframe');
+            wireframes.forEach(wireframe => {
+                wireframe.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+                wireframe.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Add click effects to buttons
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    if (!this.textContent.includes('Login') && !this.textContent.includes('Confirmar') && !this.textContent.includes('Cancelar')) {
+                        e.preventDefault();
+                        this.style.transform = 'scale(0.95)';
+                        setTimeout(() => {
+                            this.style.transform = 'scale(1)';
+                        }, 150);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
