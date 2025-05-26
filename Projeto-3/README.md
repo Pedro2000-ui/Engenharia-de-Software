@@ -49,8 +49,6 @@ O sistema será dividido em três camadas principais:
 * **API Backend**: serviços RESTful (ex. Node.js + Express ou Spring Boot) que expõem endpoints de agendamento, usuário e prontuário.
 * **Banco de Dados**: MySQL (ou similar) para armazenar entidades como Paciente, Médico, Consulta e Prontuário.
 
-![Diagrama de Arquitetura](./docs/arquitetura.png)
-
 ---
 
 ## Modelagem de Dados
@@ -262,14 +260,19 @@ sequenceDiagram
 
 ## Plano de Testes (IEEE)
 
-| ID    | Descrição                              | Pré-condição                    | Passos                                                                      | Resultado Esperado                                    |
-|-------|----------------------------------------|---------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------------|
-| TC-01 | Agendar consulta válida                | Usuário autenticado             | 1. Selecionar especialidade 2. Escolher data/hora 3. Confirmar             | Consulta registrada e notificação enviada            |
-| TC-02 | Agendar fora de horário disponível     | Usuário autenticado             | 1. Selecionar data sem vaga 2. Tentar agendar                               | Mensagem de indisponibilidade e sugestão de alternativas |
-| TC-03 | Cancelar dentro do prazo              | Consulta agendada                | 1. Acessar histórico 2. Solicitar cancelamento                              | Consulta marcada como cancelada e notificação enviada |
-| TC-04 | Cancelar fora do prazo                | Consulta agendada para o mesmo dia| 1. Solicitar cancelamento                                                  | Mensagem de erro informando impossibilidade           |
-| TC-05 | Visualizar prontuário com registros   | Paciente com consultas anteriores| 1. Médico acessa prontuário                                                 | Dados de consultas, exames e prescrições exibidos     |
-| TC-06 | Visualizar prontuário sem registros   | Paciente sem histórico           | 1. Médico acessa prontuário                                                 | Mensagem informativa “Nenhum registro encontrado”     |
+## Plano de Testes (IEEE)
+
+| ID    | Descrição                              | Pré-condição                     | Passos                                                                                   | Resultado Esperado                                        |
+|-------|-----------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------|
+| TC-01 | Agendar consulta válida                 | Usuário autenticado              | 1. Selecionar especialidade<br>2. Escolher data/hora<br>3. Confirmar                     | Consulta registrada e notificação enviada                 |
+| TC-02 | Agendar fora de horário disponível      | Usuário autenticado              | 1. Selecionar data sem vaga<br>2. Tentar agendar                                         | Mensagem de indisponibilidade e sugestão de alternativas  |
+| TC-03 | Cancelar dentro do prazo                | Consulta agendada                 | 1. Acessar histórico<br>2. Solicitar cancelamento                                        | Consulta marcada como cancelada e notificação enviada     |
+| TC-04 | Cancelar fora do prazo                  | Consulta agendada para o mesmo dia| 1. Solicitar cancelamento                                                                | Mensagem de erro informando impossibilidade               |
+| TC-05 | Visualizar prontuário com registros     | Paciente com consultas anteriores | 1. Médico acessa prontuário                                                              | Dados de consultas, exames e prescrições exibidos         |
+| TC-06 | Visualizar prontuário sem registros     | Paciente sem histórico            | 1. Médico acessa prontuário                                                              | Mensagem informativa “Nenhum registro encontrado”         |
+```
+
+```
 
 ---
 
