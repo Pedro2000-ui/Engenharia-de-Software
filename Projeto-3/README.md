@@ -4,21 +4,6 @@ Este repositório reúne a **modelagem e design** do Sistema de Agendamento de C
 
 ---
 
-## Índice
-
-* [Introdução](#introdução)
-* [Funcionalidades Principais](#funcionalidades-principais)
-* [Arquitetura do Sistema](#arquitetura-do-sistema)
-* [Modelagem de Dados](#modelagem-de-dados)
-* [Casos de Uso](#casos-de-uso)
-* [Wireframes em Baixa Resolução](#wireframes-em-baixa-resolução)
-* [Diagrama de Classes](#diagrama-de-classes)
-* [Diagramas de Sequência](#diagramas-de-sequência)
-* [Plano de Testes (IEEE)](#plano-de-testes-ieee)
-* [Referências e Créditos](#referências-e-créditos)
-
----
-
 ## Introdução
 
 O **Sistema de Agendamento de Consultas Médicas** tem como propósito otimizar a gestão de atendimentos clínicos, promovendo uma interface intuitiva para pacientes e médicos. Ele abrange:
@@ -258,35 +243,22 @@ sequenceDiagram
 
 ---
 
-## Plano de Testes (IEEE)
+---
 
 ## Plano de Testes (IEEE)
 
-| ID    | Descrição                              | Pré-condição                     | Passos                                                                                   | Resultado Esperado                                        |
-|-------|-----------------------------------------|----------------------------------|-------------------------------------------------------------------------------------------|-----------------------------------------------------------|
-| TC-01 | Agendar consulta válida                 | Usuário autenticado              | 1. Selecionar especialidade<br>2. Escolher data/hora<br>3. Confirmar                     | Consulta registrada e notificação enviada                 |
-| TC-02 | Agendar fora de horário disponível      | Usuário autenticado              | 1. Selecionar data sem vaga<br>2. Tentar agendar                                         | Mensagem de indisponibilidade e sugestão de alternativas  |
-| TC-03 | Cancelar dentro do prazo                | Consulta agendada                 | 1. Acessar histórico<br>2. Solicitar cancelamento                                        | Consulta marcada como cancelada e notificação enviada     |
-| TC-04 | Cancelar fora do prazo                  | Consulta agendada para o mesmo dia| 1. Solicitar cancelamento                                                                | Mensagem de erro informando impossibilidade               |
-| TC-05 | Visualizar prontuário com registros     | Paciente com consultas anteriores | 1. Médico acessa prontuário                                                              | Dados de consultas, exames e prescrições exibidos         |
-| TC-06 | Visualizar prontuário sem registros     | Paciente sem histórico            | 1. Médico acessa prontuário                                                              | Mensagem informativa “Nenhum registro encontrado”         |
+| ID    | Descrição                              | Pré-condição                    | Passos                                                                      | Resultado Esperado                                    |
+|-------|----------------------------------------|---------------------------------|-----------------------------------------------------------------------------|-------------------------------------------------------|
+| TC-01 | Agendar consulta válida                | Usuário autenticado             | 1. Selecionar especialidade 2. Escolher data/hora 3. Confirmar             | Consulta registrada e notificação enviada            |
+| TC-02 | Agendar fora de horário disponível     | Usuário autenticado             | 1. Selecionar data sem vaga 2. Tentar agendar                               | Mensagem de indisponibilidade e sugestão de alternativas |
+| TC-03 | Cancelar dentro do prazo              | Consulta agendada                | 1. Acessar histórico 2. Solicitar cancelamento                              | Consulta marcada como cancelada e notificação enviada |
+| TC-04 | Cancelar fora do prazo                | Consulta agendada para o mesmo dia| 1. Solicitar cancelamento                                                  | Mensagem de erro informando impossibilidade           |
+| TC-05 | Visualizar prontuário com registros   | Paciente com consultas anteriores| 1. Médico acessa prontuário                                                 | Dados de consultas, exames e prescrições exibidos     |
+| TC-06 | Visualizar prontuário sem registros   | Paciente sem histórico           | 1. Médico acessa prontuário                                                 | Mensagem informativa “Nenhum registro encontrado”     |
+
+---
 ```
 
 ```
 
 ---
-
-## Referências e Créditos
-
-**Referências:**
-
-- Sommerville, Ian. _Engenharia de Software_, 10ª ed., Pearson.  
-- Pressman, Roger. _Engenharia de Software: Uma Abordagem Profissional_, 8ª ed., McGraw-Hill.  
-- Fowler, Martin. _UML Distilled_, 3ª ed., Addison-Wesley.
-
-**Créditos:**
-
-- **Aluno:** [Seu Nome] – Modelagem de Casos de Uso, Diagramas UML e Plano de Testes.
-- **Colegas de Equipe:** [Nomes dos colegas] – Contribuições diversas em análise de requisitos.
-
-```
