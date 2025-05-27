@@ -36,6 +36,7 @@ Aqui estão os projetos documentados neste repositório:
 
 1. [Projeto 1](/Projeto-1/README.md) - Análise para o desenvolvimento de um sistema voltado para consultas médicas.
 2. [Projeto 2](/Projeto-2/README.md) - Requisitos funcionais e não funcionais de um sistema voltado para consultas médicas.
+3. [Projeto 3](/Projeto-3/README.md) - Continuação da modelagem do sistema de trabalho, casos de uso, diagramas e plano de testes do sistema de consultas médicas.
 
 ---
 

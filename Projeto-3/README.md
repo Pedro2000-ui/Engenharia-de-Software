@@ -249,7 +249,3 @@ sequenceDiagram
 | TC-04 | Cancelar fora do prazo                | Consulta agendada para o mesmo dia| 1. Solicitar cancelamento                                                  | Mensagem de erro informando impossibilidade           |
 | TC-05 | Visualizar prontuário com registros   | Paciente com consultas anteriores| 1. Médico acessa prontuário                                                 | Dados de consultas, exames e prescrições exibidos     |
 | TC-06 | Visualizar prontuário sem registros   | Paciente sem histórico           | 1. Médico acessa prontuário                                                 | Mensagem informativa “Nenhum registro encontrado”     |
-
-```
-
-```
