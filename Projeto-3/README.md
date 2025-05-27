@@ -250,7 +250,6 @@ sequenceDiagram
 | TC-05 | Visualizar prontuário com registros   | Paciente com consultas anteriores| 1. Médico acessa prontuário                                                 | Dados de consultas, exames e prescrições exibidos     |
 | TC-06 | Visualizar prontuário sem registros   | Paciente sem histórico           | 1. Médico acessa prontuário                                                 | Mensagem informativa “Nenhum registro encontrado”     |
 
----
 ```
 
 ```
