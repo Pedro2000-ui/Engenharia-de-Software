@@ -239,12 +239,6 @@ sequenceDiagram
     Frontend-->>Medico: exibeProntuario
 ```
 
-```
-
----
-
----
-
 ## Plano de Testes (IEEE)
 
 | ID    | Descrição                              | Pré-condição                    | Passos                                                                      | Resultado Esperado                                    |
@@ -260,5 +254,3 @@ sequenceDiagram
 ```
 
 ```
-
----
